@@ -1,4 +1,6 @@
-from chatbot.domain.prompt import Prompt, Response
+import pytest
+
+from chatbot.domain.prompt import Response
 
 
 class PromptAPITestDouble:
@@ -10,9 +12,7 @@ class PromptAPITestDouble:
         return Response(text="Very smart response")
 
 
-def test_chatbot_prompt_returns_response_object():
+@pytest.fixture
+def prompt_api():
     prompt_api = PromptAPITestDouble()
-    prompt = Prompt(prompt_api)
-    response = prompt.complete("testing")
-
-    assert isinstance(response, Response)
+    return prompt_api
