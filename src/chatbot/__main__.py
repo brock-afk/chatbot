@@ -1,10 +1,7 @@
-import openai
+from chatbot.console.application import Application
+from chatbot.models.openai import OpenAIPrompt
 
-completion = openai.Completion.create(
-    engine="text-davinci-003",
-    prompt="hello world",
-    temperature=0.5,
-)
-
-for choice in completion.choices:
-    print(choice.text)
+if __name__ == "__main__":
+    prompt_api = OpenAIPrompt()
+    application = Application(prompt_api=prompt_api)
+    application.run()
