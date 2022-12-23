@@ -55,5 +55,5 @@ def test_open_ai_prompt_uses_correct_input(
     open_ai_prompt.complete("testing")
 
     create.assert_called_once_with(
-        engine="text-davinci-003", prompt="testing", temperature=0
+        engine="text-davinci-002", prompt="testing", temperature=0.5, max_tokens=2048
     )
