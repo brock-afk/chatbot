@@ -5,7 +5,7 @@ from chatbot.domain.prompt import PromptAPI, Response
 
 class OpenAIPrompt(PromptAPI):
     def __init__(
-        self, engine: str | None = "text-davinci-003", temperature: int | None = 0
+        self, engine: str | None = "text-davinci-002", temperature: int | None = 0.5
     ) -> None:
         self.engine = engine
         self.temperature = temperature
@@ -16,6 +16,7 @@ class OpenAIPrompt(PromptAPI):
             engine=self.engine,
             prompt=text,
             temperature=self.temperature,
+            max_tokens=2048,
         )
 
         choices = completion.choices
