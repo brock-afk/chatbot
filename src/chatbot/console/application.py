@@ -8,7 +8,7 @@ class Application:
         self.parser = ArgumentParser()
         self.parser.add_argument("text", help="Text for chatbot to analyze", type=str)
 
-    def run(self) -> int:
+    def run(self) -> str:
         args = self.parser.parse_args()
         result = self.prompt_api.complete(args.text)
-        print(result.text.strip())
+        return result.text.strip()

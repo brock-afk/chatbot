@@ -4,4 +4,5 @@ from chatbot.models.openai import OpenAIPrompt
 if __name__ == "__main__":
     prompt_api = OpenAIPrompt()
     application = Application(prompt_api=prompt_api)
-    application.run()
+    result = application.run()
+    print(result)
