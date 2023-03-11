@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Chatbot butler based on the OpenAI model text-moderation-playground"
 authors = ["Brock Brumley <brockbrumley95@gmail.com>"]
 license = "MIT"
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"

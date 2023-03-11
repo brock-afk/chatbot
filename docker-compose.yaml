@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build: .
+    env_file: .env
+  chatbot-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file: .env
